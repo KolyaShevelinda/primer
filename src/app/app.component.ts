@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'primer';
+
+  toggle = true;
+
+  toggleCards() {
+    this.toggle = !this.toggle;
+  }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-card',
@@ -6,8 +6,33 @@ import { Component } from '@angular/core';
     styleUrls: ['./card.component.scss']
 })
 
-export class CardComponent {
+export class CardComponent implements OnInit {
 
     title = 'My Card Title';
+    text = 'This is my card information from myself';
 
+    textColor = 'black';
+
+    imgUrl: string = 'https://angular.io/assets/images/logos/angular/angular.png';
+
+    ngOnInit() {
+        setTimeout(()=>{
+            this.imgUrl = 'https://www.dotcom-monitor.com/blog/wp-content/uploads/sites/3/2020/05/Vue-logo-1.png'
+        }, 3000)
+        setTimeout(()=>{
+            this.imgUrl = 'https://angular.io/assets/images/logos/angular/angular.png'
+        }, 6000)
+    }
+
+    changeTitle() {
+        this.title = 'This is change title';
+    }
+
+    inputHandler(value: any) {
+        this.title = value;
+    }
+
+    changeHandler() {
+        console.log(this.title);
+    }
  }
